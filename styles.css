@@ -1,9 +1,24 @@
 body {
-  background-color: powderblue;
+  background-color: rgb(252, 247, 239);
 }
 h1 {
   color: blue;
+  background-color: rgb(104, 77, 34);
 }
 p {
   color: red;
+}
+
+hr {
+  border: 1px solid black;
+}
+
+musica {
+  background-color: rgb(119, 4, 219);
+  color:aqua center;
+}
+
+foto-principal {
+  height: auto;
+  weight: auto;
 }
