@@ -1,26 +1,93 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedding Proyect</title>
+
+    <title>Nuestra Boda</title>
+
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Tipografías -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <img src="assets/nube.png" alt="Foto MY" stylesheet="foto-principal">
 
-    <h1>This is a Heading</h1>
+    <header class="portada">
 
-    <hr>
-    <h2>Subheading</h2>
-    <p>This is a paragraph.</p>
+        <img src="assets/foto.png" alt="Fotografía de los novios" class="foto-principal">
 
-    <p>Comparte tus momentos en nuestra boda</p>
-    <a href="https://drive.google.com/drive/folders/118LGhDDIuQO_xyPzXofDF0jhbhbGYKM7?usp=sharing" target="_blank">Aqui!</a>
-    <hr>
-    <br>
-    <audio controls autoplay>
-        <source src="assets/Intocable - Sueña.mp3" type="audio/mpeg" stylesheet="musica">
-    </audio>
+        <div class="contenido-portada">
+            <p class="subtitulo">¡Nos casamos!</p>
+
+            <h1>Nuestra Boda</h1>
+
+            <p class="nombres">Marcos & Yaneth</p>
+
+            <p class="fecha">Una fecha especial para recordar</p>
+        </div>
+
+    </header>
+
+    <main>
+
+        <section class="bienvenida">
+
+            <p class="frase">Un día, un lugar y una historia juntos...</p>
+
+            <h2>¡Queremos compartirlo contigo!</h2>
+
+            <p>
+                Nos llena de alegría invitarte a celebrar
+                uno de los momentos más importantes de nuestras vidas.
+            </p>
+
+        </section>
+
+        <hr>
+
+        <section class="galeria">
+
+            <h2>Comparte tus recuerdos</h2>
+
+            <p>
+                Ayúdanos a conservar cada momento de nuestra boda.
+                Sube tus fotografías y comparte tu experiencia con nosotros.
+            </p>
+
+            <a
+                href="https://drive.google.com/drive/folders/118LGhDDIuQO_xyPzXofDF0jhbhbGYKM7?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="boton"
+            >
+                Compartir fotografías
+            </a>
+
+        </section>
+
+        <hr>
+
+        <section class="musica">
+
+            <h2>Una canción especial</h2>
+
+            <p>Disfruta de nuestra canción mientras celebramos.</p>
+
+            <audio controls>
+                <source src="assets/Intocable - Sueña.mp3" type="audio/mpeg">
+                Tu navegador no soporta audio.
+            </audio>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Con amor, para siempre ♡</p>
+    </footer>
+
 </body>
 </html>

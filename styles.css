@@ -1,24 +1,162 @@
+
+/* Configuración general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-  background-color: rgb(252, 247, 239);
+    background-color: #fcf7ef;
+    color: #665747;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
 }
+
+/* Portada */
+.portada {
+    position: relative;
+    width: 100%;
+    min-height: 550px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.foto-principal {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(65%);
+}
+
+.contenido-portada {
+    position: relative;
+    z-index: 1;
+    color: white;
+    padding: 30px;
+}
+
+.subtitulo {
+    font-size: 18px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
 h1 {
-  color: blue;
-  background-color: rgb(104, 77, 34);
+    font-family: 'Great Vibes', cursive;
+    font-size: 85px;
+    font-weight: normal;
+    margin: 20px 0;
 }
+
+.nombres {
+    font-size: 25px;
+    letter-spacing: 3px;
+}
+
+.fecha {
+    margin-top: 20px;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+/* Secciones */
+section {
+    padding: 65px 20px;
+    max-width: 850px;
+    margin: auto;
+}
+
+h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 45px;
+    font-weight: normal;
+    color: #94765b;
+    margin-bottom: 20px;
+}
+
 p {
-  color: red;
+    font-size: 15px;
+    line-height: 1.9;
+    color: #786957;
 }
 
+.frase {
+    font-family: 'Great Vibes', cursive;
+    font-size: 32px;
+    color: #ad9274;
+    margin-bottom: 15px;
+}
+
+/* Separadores */
 hr {
-  border: 1px solid black;
+    width: 60%;
+    margin: auto;
+    border: none;
+    border-top: 1px solid #d9c9b5;
 }
 
-musica {
-  background-color: rgb(119, 4, 219);
-  color:aqua center;
+/* Botón de fotografías */
+.boton {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 15px 35px;
+
+    background-color: #a58b6c;
+    color: white;
+
+    text-decoration: none;
+    border-radius: 30px;
+
+    font-size: 13px;
+    letter-spacing: 1px;
+
+    transition: 0.3s;
 }
 
-foto-principal {
-  height: auto;
-  weight: auto;
+.boton:hover {
+    background-color: #80694e;
+    transform: translateY(-3px);
+}
+
+/* Música */
+.musica audio {
+    margin-top: 20px;
+    width: 280px;
+}
+
+/* Pie de página */
+footer {
+    background-color: #eee3d5;
+    padding: 25px;
+}
+
+footer p {
+    font-family: 'Great Vibes', cursive;
+    font-size: 30px;
+    color: #94765b;
+}
+
+/* Adaptación a celulares */
+@media (max-width: 600px) {
+
+    .portada {
+        min-height: 450px;
+    }
+
+    h1 {
+        font-size: 60px;
+    }
+
+    .nombres {
+        font-size: 19px;
+    }
+
+    h2 {
+        font-size: 38px;
+    }
+
 }
