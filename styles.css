@@ -1,9 +1,16 @@
 
-/* Configuración general */
+/* =========================================
+   CONFIGURACIÓN GENERAL
+========================================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -11,153 +18,529 @@ body {
     color: #665747;
     font-family: 'Montserrat', sans-serif;
     text-align: center;
+    overflow-x: hidden;
 }
 
-/* Portada */
+
+/* =========================================
+   PORTADA
+========================================= */
+
 .portada {
     position: relative;
     width: 100%;
-    min-height: 550px;
-    overflow: hidden;
+    min-height: 650px;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
+    overflow: hidden;
 }
 
 .foto-principal {
     position: absolute;
     width: 100%;
     height: 100%;
+
     object-fit: cover;
-    filter: brightness(65%);
+
+    filter: brightness(60%);
+
+    animation: zoom-fondo 12s ease-in-out forwards;
 }
 
 .contenido-portada {
     position: relative;
     z-index: 1;
+
     color: white;
     padding: 30px;
+
+    width: 100%;
 }
+
+
+/* =========================================
+   TEXTOS DE PORTADA
+========================================= */
 
 .subtitulo {
-    font-size: 18px;
-    letter-spacing: 5px;
+    font-size: 16px;
+    letter-spacing: 6px;
     text-transform: uppercase;
+
+    margin-bottom: 15px;
 }
 
-h1 {
+.titulo {
     font-family: 'Great Vibes', cursive;
-    font-size: 85px;
+    font-size: 90px;
     font-weight: normal;
-    margin: 20px 0;
-}
 
-.nombres {
-    font-size: 25px;
-    letter-spacing: 3px;
+    margin-bottom: 25px;
 }
 
 .fecha {
-    margin-top: 20px;
+    margin-top: 35px;
+
     font-size: 14px;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
 }
 
-/* Secciones */
+
+/* =========================================
+   ANIMACIÓN DE LOS NOMBRES
+========================================= */
+
+.split-text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    font-family: 'Great Vibes', cursive;
+    font-size: 65px;
+    font-weight: normal;
+
+    color: white;
+}
+
+.text-part {
+    display: inline-block;
+    white-space: pre;
+
+    animation-duration: 2s;
+    animation-timing-function: cubic-bezier(.16, 1, .3, 1);
+    animation-fill-mode: both;
+}
+
+.text-part.left {
+    animation-name: slide-in-left;
+}
+
+.text-part.right {
+    animation-name: slide-in-right;
+}
+
+@keyframes slide-in-left {
+
+    from {
+        opacity: 0;
+        transform: translateX(-150px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+@keyframes slide-in-right {
+
+    from {
+        opacity: 0;
+        transform: translateX(150px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+/* =========================================
+   ANIMACIÓN DE APARICIÓN
+========================================= */
+
+.animar-aparicion {
+    opacity: 0;
+    animation: aparecer-arriba 1.5s ease forwards;
+}
+
+.subtitulo {
+    animation-delay: 0.3s;
+}
+
+.titulo {
+    animation-delay: 0.7s;
+}
+
+.fecha {
+    animation-delay: 2s;
+}
+
+@keyframes aparecer-arriba {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================
+   ANIMACIÓN DEL FONDO
+========================================= */
+
+@keyframes zoom-fondo {
+
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.08);
+    }
+
+}
+
+
+/* =========================================
+   SECCIONES
+========================================= */
+
 section {
-    padding: 65px 20px;
-    max-width: 850px;
+    padding: 85px 25px;
+
+    max-width: 900px;
     margin: auto;
 }
 
 h2 {
     font-family: 'Great Vibes', cursive;
-    font-size: 45px;
+
+    font-size: 48px;
     font-weight: normal;
+
     color: #94765b;
-    margin-bottom: 20px;
+
+    margin-bottom: 25px;
 }
 
 p {
     font-size: 15px;
     line-height: 1.9;
+
     color: #786957;
 }
 
 .frase {
     font-family: 'Great Vibes', cursive;
-    font-size: 32px;
+
+    font-size: 36px;
+
     color: #ad9274;
-    margin-bottom: 15px;
+
+    margin-bottom: 20px;
 }
 
-/* Separadores */
-hr {
-    width: 60%;
+.texto-seccion {
+    max-width: 650px;
     margin: auto;
+}
+
+
+/* =========================================
+   ANIMACIONES AL DESPLAZARSE
+========================================= */
+
+.aparecer {
+    opacity: 0;
+    transform: translateY(45px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.aparecer.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   ADORNOS
+========================================= */
+
+.adorno {
+    font-size: 35px;
+    color: #b99a78;
+
+    margin-top: 35px;
+
+    animation: latido 2s ease-in-out infinite;
+}
+
+@keyframes latido {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+}
+
+
+/* =========================================
+   SEPARADORES
+========================================= */
+
+hr {
+    width: 55%;
+
+    margin: auto;
+
     border: none;
     border-top: 1px solid #d9c9b5;
 }
 
-/* Botón de fotografías */
+
+/* =========================================
+   GALERÍA E INSTRUCCIONES
+========================================= */
+
+.instrucciones {
+    margin-top: 70px;
+}
+
+.imagenes-drive {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+    gap: 30px;
+
+    margin-top: 45px;
+}
+
+.imagen-referencia {
+    width: 100%;
+    max-width: 320px;
+
+    height: auto;
+    object-fit: contain;
+
+    border-radius: 15px;
+
+    box-shadow: 0 8px 25px rgba(80, 55, 35, 0.10);
+
+    transition: transform 0.4s ease;
+}
+
+.imagen-referencia:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+
+/* =========================================
+   BOTÓN
+========================================= */
+
 .boton {
     display: inline-block;
-    margin-top: 25px;
-    padding: 15px 35px;
+
+    margin-top: 45px;
+    padding: 16px 40px;
 
     background-color: #a58b6c;
     color: white;
 
     text-decoration: none;
-    border-radius: 30px;
+
+    border-radius: 35px;
 
     font-size: 13px;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
 
-    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(100, 70, 40, 0.15);
+
+    transition: all 0.4s ease;
 }
 
 .boton:hover {
     background-color: #80694e;
-    transform: translateY(-3px);
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 10px 25px rgba(100, 70, 40, 0.25);
 }
 
-/* Música */
-.musica audio {
-    margin-top: 20px;
-    width: 280px;
+
+/* =========================================
+   INDICADOR DE DESPLAZAMIENTO
+========================================= */
+
+.indicador-scroll {
+    position: absolute;
+    bottom: 25px;
+
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 25px;
+    height: 40px;
+
+    border: 1px solid rgba(255,255,255,0.7);
+    border-radius: 20px;
+
+    z-index: 2;
 }
 
-/* Pie de página */
+.indicador-scroll span {
+    display: block;
+
+    width: 4px;
+    height: 8px;
+
+    background: white;
+    border-radius: 5px;
+
+    margin: 7px auto;
+
+    animation: scroll-indicador 1.5s infinite;
+}
+
+@keyframes scroll-indicador {
+
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+}
+
+
+/* =========================================
+   PIE DE PÁGINA
+========================================= */
+
 footer {
     background-color: #632323;
-    
-    padding: 25px;
+
+    padding: 30px 20px;
 }
 
 footer p {
     font-family: 'Great Vibes', cursive;
-    font-size: 30px;
-    color: #94765b;
+
+    font-size: 35px;
+
+    color: #f5e8d9;
 }
 
-/* Adaptación a celulares */
+
+/* =========================================
+   ADAPTACIÓN A CELULARES
+========================================= */
+
 @media (max-width: 600px) {
 
     .portada {
-        min-height: 450px;
+        min-height: 500px;
     }
 
-    h1 {
-        font-size: 60px;
+    .contenido-portada {
+        padding: 15px;
     }
 
-    .nombres {
-        font-size: 19px;
+    .subtitulo {
+        font-size: 12px;
+        letter-spacing: 4px;
+    }
+
+    .titulo {
+        font-size: 65px;
+    }
+
+    .split-text-container {
+        font-size: 43px;
+    }
+
+    .fecha {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    section {
+        padding: 65px 22px;
     }
 
     h2 {
-        font-size: 38px;
+        font-size: 40px;
     }
 
+    .frase {
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .imagenes-drive {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .imagen-referencia {
+        max-width: 280px;
+    }
+
+    .boton {
+        padding: 15px 28px;
+        font-size: 12px;
+    }
+
+}
+
+
+/* =========================================
+   ACCESIBILIDAD: REDUCIR MOVIMIENTO
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+}
+
+/* =========================================
+   TODOS LOS TEXTOS DE LA PORTADA EN BLANCO
+========================================= */
+
+.portada .contenido-portada,
+.portada .contenido-portada * {
+    color: #ffffff;
 }

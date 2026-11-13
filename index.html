@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,84 +11,169 @@
     <link rel="stylesheet" href="styles.css">
 
     <!-- Tipografías -->
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
+    <!-- PORTADA -->
     <header class="portada">
 
-        <img src="assets/foto.png" alt="Fotografía de los novios" class="foto-principal">
+        <img
+            src="assets/foto.png"
+            alt="Fotografía de los novios"
+            class="foto-principal"
+        >
 
         <div class="contenido-portada">
-            <p class="subtitulo">¡Nos casamos!</p>
 
-            <h1>Nuestra Boda</h1>
+            <p class="subtitulo animar-aparicion">
+                ¡Nos casamos!
+            </p>   
 
-            <p class="nombres">Marcos & Yaneth</p>
+            <div class="split-text-container">
+                <span class="text-part left">Marcos &</span>
+                <span class="text-part right">Yaneth</span>
+            </div>
 
-            <p class="fecha">Una fecha especial para recordar</p>
+            <p class="fecha animar-aparicion">
+                Una fecha especial para recordar
+            </p>
+
+        </div>
+
+        <div class="indicador-scroll">
+            <span></span>
         </div>
 
     </header>
 
+
     <main>
 
+        <!-- BIENVENIDA -->
         <section class="bienvenida">
 
-            <p class="frase">Un día, un lugar y una historia juntos...</p>
+            <p class="frase aparecer">
+                Un día, un lugar y una historia juntos...
+            </p>
 
-            <h2>¡Queremos compartirlo contigo!</h2>
+            <h2 class="aparecer">
+                ¡Queremos compartirlo contigo!
+            </h2>
 
-            <p>
+            <p class="texto-seccion aparecer">
                 Nos llena de alegría invitarte a celebrar
                 uno de los momentos más importantes de nuestras vidas.
             </p>
 
+            <div class="adorno aparecer">♡</div>
+
         </section>
+
 
         <hr>
 
+
+        <!-- GALERÍA -->
         <section class="galeria">
 
-            <h2>Comparte tus recuerdos</h2>
+            <h2 class="aparecer">
+                Comparte tus recuerdos
+            </h2>
 
-            <p>
+            <p class="texto-seccion aparecer">
                 Ayúdanos a conservar cada momento de nuestra boda.
                 Sube tus fotografías y comparte tu experiencia con nosotros.
             </p>
 
+            <div class="instrucciones">
+
+                <h2 class="aparecer">
+                    ¿Cómo compartir fotografías?
+                </h2>
+
+                <p class="texto-seccion aparecer">
+                    Haz clic en el siguiente enlace para acceder a nuestra
+                    carpeta de Google Drive. Allí podrás subir tus fotos
+                    y videos de la boda.
+                </p>
+
+            </div>
+
+
+            <!-- IMÁGENES DE REFERENCIA -->
+            <div class="imagenes-drive">
+
+                <img
+                    src="assets/fotorefdrivecelular.png"
+                    alt="Instrucciones para compartir fotografías"
+                    class="imagen-referencia aparecer"
+                >
+
+                <img
+                    src="assets/fotorefdrivecelular2.png"
+                    alt="Instrucciones adicionales de Google Drive"
+                    class="imagen-referencia aparecer"
+                >
+
+            </div>
+
+
+            <!-- BOTÓN -->
             <a
                 href="https://drive.google.com/drive/folders/118LGhDDIuQO_xyPzXofDF0jhbhbGYKM7?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="boton"
+                class="boton aparecer"
             >
-                Compartir fotografías
+                Compartir fotografías ♡
             </a>
-
-        </section>
-
-        <hr>
-
-        <section class="musica">
-
-            <h2>Una canción especial</h2>
-
-            <p>Disfruta de nuestra canción mientras celebramos.</p>
-
-            <audio controls>
-                <source src="assets/Intocable - Sueña.mp3" type="audio/mpeg">
-                Tu navegador no soporta audio.
-            </audio>
 
         </section>
 
     </main>
 
+
+    <!-- PIE DE PÁGINA -->
     <footer>
-        <p>Con amor, para siempre ♡</p>
+
+        <p>
+            Con amor, para siempre ♡
+        </p>
+
     </footer>
+
+
+    <!-- ANIMACIONES AL DESPLAZARSE -->
+    <script>
+
+        const elementos = document.querySelectorAll('.aparecer');
+
+        const observador = new IntersectionObserver((entradas) => {
+
+            entradas.forEach((entrada) => {
+
+                if (entrada.isIntersecting) {
+
+                    entrada.target.classList.add('visible');
+
+                    observador.unobserve(entrada.target);
+
+                }
+
+            });
+
+        }, {
+            threshold: 0.15
+        });
+
+        elementos.forEach((elemento) => {
+            observador.observe(elemento);
+        });
+
+    </script>
 
 </body>
 </html>
